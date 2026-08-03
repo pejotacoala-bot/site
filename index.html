@@ -1,0 +1,604 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Divertidamente — A Ciência das Emoções: hormônios e neurotransmissores apresentados pela equipe da central de controle.">
+<meta name="theme-color" content="#0d0a22">
+<title>Divertidamente · A Ciência das Emoções</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="stylesheet" href="fonts/fonts.css">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<canvas id="orbs" aria-hidden="true"></canvas>
+<div class="bg-glow" aria-hidden="true"></div>
+<div id="progressBar" aria-hidden="true"></div>
+
+<header class="nav" id="topNav">
+  <nav class="nav-links" aria-label="Seções">
+    <a href="#central">Central</a>
+    <a href="#sistemas">Sistemas</a>
+    <a href="#mensageiros">Mensageiros</a>
+    <a href="#equilibrio">Equilíbrio</a>
+    <a href="#quiz" class="nav-cta">Quiz</a>
+  </nav>
+  <button class="nav-icon" id="fullscreenBtn" type="button" title="Tela cheia" aria-label="Alternar tela cheia">
+    <svg id="fsOn" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <path d="M8 3H5a2 2 0 0 0-2 2v3M16 3h3a2 2 0 0 1 2 2v3M8 21H5a2 2 0 0 1-2-2v-3M16 21h3a2 2 0 0 0 2-2v-3"/>
+    </svg>
+    <svg id="fsOff" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="display:none">
+      <path d="M4 9V6a2 2 0 0 1 2-2h3M15 4h3a2 2 0 0 1 2 2v3M4 15v3a2 2 0 0 0 2 2h3M15 20h3a2 2 0 0 0 2-2v-3"/>
+    </svg>
+  </button>
+</header>
+
+<nav class="side-dots" id="sideDots" aria-label="Navegação rápida"></nav>
+
+<main>
+  <section id="inicio" class="hero">
+    <div class="hero-inner container">
+      <p class="kicker" data-hero="1"><span class="dot dot-joy"></span>Trabalho de Biologia &middot; Sistema Nervoso e Sistema Endócrino</p>
+      <h1 class="hero-title" data-hero="2">A Ciência das<br><span class="grad">Emoções</span></h1>
+      <p class="hero-sub" data-hero="3">Hormônios e neurotransmissores são os mensageiros químicos que comandam a nossa central de controle. Neste trabalho, os seus próprios sentimentos vão apresentar cada um deles.</p>
+      <div class="hero-cta" data-hero="4">
+        <a href="#central" class="btn btn-primary">Começar a exploração</a>
+        <a href="#quiz" class="btn btn-ghost">Ir direto para o quiz</a>
+      </div>
+    </div>
+
+    <div class="hero-cast" data-hero="5">
+      <div class="cast-item c-joy">
+        <svg id="ch-joy" class="char char-joy" viewBox="0 0 140 190" aria-hidden="true" data-char="joy"></svg>
+        <span class="cast-name">Alegria</span>
+      </div>
+
+      <div class="cast-item c-sad">
+        <svg id="ch-sad" class="char char-sad" viewBox="0 0 140 190" aria-hidden="true" data-char="sad"></svg>
+        <span class="cast-name">Tristeza</span>
+      </div>
+
+      <div class="cast-item c-ang">
+        <svg id="ch-ang" class="char char-ang" viewBox="0 0 140 190" aria-hidden="true" data-char="ang"></svg>
+        <span class="cast-name">Raiva</span>
+      </div>
+
+      <div class="cast-item c-fear">
+        <svg id="ch-fear" class="char char-fear" viewBox="0 0 140 190" aria-hidden="true" data-char="fear"></svg>
+        <span class="cast-name">Medo</span>
+      </div>
+
+      <div class="cast-item c-dis">
+        <span class="fly" aria-hidden="true"></span>
+        <svg id="ch-dis" class="char char-dis" viewBox="0 0 140 190" aria-hidden="true" data-char="dis"></svg>
+        <span class="cast-name">Nojinho</span>
+      </div>
+
+      <div class="cast-item c-anx">
+        <svg id="ch-anx" class="char char-anx" viewBox="0 0 140 190" aria-hidden="true" data-char="anx"></svg>
+        <span class="cast-name">Ansiedade</span>
+      </div>
+
+      <div class="cast-item c-enu">
+        <svg class="char char-enu" viewBox="0 0 140 190" aria-hidden="true">
+          <use href="#ch-enu"/>
+        </svg>
+        <span class="cast-name">Tédio</span>
+      </div>
+    </div>
+
+    <div class="scroll-hint" data-hero="6" aria-hidden="true">
+      <span>role para descobrir</span>
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <path d="M6 9l6 6 6-6"/>
+      </svg>
+    </div>
+  </section>
+
+  <section id="central" class="section">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <p class="kicker"><span class="dot dot-joy"></span>01 &middot; O ponto de partida</p>
+        <h2>A central de controle</h2>
+        <p class="lead">No filme, as emoções moram em uma central dentro da mente da Riley. Na vida real, essa central existe — e é comandada por dois sistemas que trabalham juntos: o <strong>nervoso</strong> e o <strong>endócrino</strong>.</p>
+      </div>
+
+      <div class="orbit-grid">
+        <div class="orbit" data-reveal aria-hidden="true">
+          <div class="orbit-ring"></div>
+          <div class="orbit-core">
+            <span class="core-orb"></span>
+          </div>
+          <div class="orbit-char c-joy" style="--i:0">
+            <svg class="char char-joy" viewBox="0 0 140 190"><use href="#ch-joy"/></svg>
+          </div>
+          <div class="orbit-char c-sad" style="--i:1">
+            <svg class="char char-sad" viewBox="0 0 140 190"><use href="#ch-sad"/></svg>
+          </div>
+          <div class="orbit-char c-ang" style="--i:2">
+            <svg class="char char-ang" viewBox="0 0 140 190"><use href="#ch-ang"/></svg>
+          </div>
+          <div class="orbit-char c-fear" style="--i:3">
+            <svg class="char char-fear" viewBox="0 0 140 190"><use href="#ch-fear"/></svg>
+          </div>
+          <div class="orbit-char c-dis" style="--i:4">
+            <svg class="char char-dis" viewBox="0 0 140 190"><use href="#ch-dis"/></svg>
+          </div>
+          <div class="orbit-char c-anx" style="--i:5">
+            <svg class="char char-anx" viewBox="0 0 140 190"><use href="#ch-anx"/></svg>
+          </div>
+        </div>
+
+        <div class="orbit-text">
+          <div class="mini-card" data-reveal>
+            <span class="mini-ico" style="--mc:#ffd93b">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3l2.5 5.5L20 9l-4.2 3.7L17 18.5l-5-2.8-5 2.8 1.2-5.8L4 9l5.5-.5z"/></svg>
+            </span>
+            <h3>O painel de comando</h3>
+            <p>O cérebro recebe estímulos, processa informações e dispara respostas a cada instante.</p>
+          </div>
+          <div class="mini-card" data-reveal>
+            <span class="mini-ico" style="--mc:#4e8fe8">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2v4M12 18v4M2 12h4M18 12h4M5 5l2.8 2.8M16.2 16.2L19 19M19 5l-2.8 2.8M7.8 16.2L5 19"/></svg>
+            </span>
+            <h3>Mensageiros químicos</h3>
+            <p>Hormônios e neurotransmissores traduzem emoções em comandos para o corpo.</p>
+          </div>
+          <div class="mini-card" data-reveal>
+            <span class="mini-ico" style="--mc:#87c76c">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3.5 12h17M12 3c-2.5 2.5-2.5 15 0 18M12 3c2.5 2.5 2.5 15 0 18"/></svg>
+            </span>
+            <h3>Corpo todo conectado</h3>
+            <p>Cada órgão recebe os sinais e reage: coração, intestino, músculos e glândulas.</p>
+          </div>
+          <blockquote class="quote" data-reveal>Toda emoção tem uma assinatura química.</blockquote>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="sistemas" class="section">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <p class="kicker"><span class="dot dot-fear"></span>02 &middot; Dois sistemas, uma equipe</p>
+        <h2>Hormônios <span class="vs">vs.</span> Neurotransmissores</h2>
+        <p class="lead">A principal diferença está na forma como cada um transmite as mensagens pelo organismo. Um é correio expresso entre neurônios; o outro, carta de longo alcance pela corrente sanguínea.</p>
+      </div>
+
+      <div class="sys-grid">
+        <article class="sys-card sys-horm" data-reveal>
+          <div class="sys-head">
+            <span class="sys-badge" style="--sc:#f4643f">H</span>
+            <h3>Hormônios</h3>
+            <p class="sys-tag">Sistema Endócrino</p>
+          </div>
+          <ul class="sys-list">
+            <li><span class="li-num">1</span>Produzidos pelas glândulas endócrinas</li>
+            <li><span class="li-num">2</span>Transportados pelo sangue</li>
+            <li><span class="li-num">3</span>Ação mais lenta e duradoura</li>
+            <li><span class="li-num">4</span>Regulam crescimento, metabolismo e reprodução</li>
+          </ul>
+          <p class="sys-ex">Exemplos: adrenalina, cortisol, insulina, testosterona e estrogênio</p>
+        </article>
+
+        <article class="sys-card sys-nt" data-reveal>
+          <div class="sys-head">
+            <span class="sys-badge" style="--sc:#4e8fe8">N</span>
+            <h3>Neurotransmissores</h3>
+            <p class="sys-tag">Sistema Nervoso</p>
+          </div>
+          <ul class="sys-list">
+            <li><span class="li-num">1</span>Produzidos pelos neurônios</li>
+            <li><span class="li-num">2</span>Atuam nas sinapses entre neurônios</li>
+            <li><span class="li-num">3</span>Ação muito rápida e de curta duração</li>
+            <li><span class="li-num">4</span>Influenciam emoções, memória, aprendizagem e movimentos</li>
+          </ul>
+          <p class="sys-ex">Exemplos: dopamina, serotonina, noradrenalina, acetilcolina e GABA</p>
+        </article>
+      </div>
+
+      <div class="diagram-grid">
+        <figure class="diagram-card" data-reveal>
+          <svg viewBox="0 0 560 320" role="img" aria-label="Diagrama de sinapse entre neurônios">
+            <g class="neuron">
+              <circle cx="150" cy="160" r="62" fill="rgba(177,155,255,.14)" stroke="#b19bff" stroke-width="3.5"/>
+              <circle cx="150" cy="160" r="17" fill="rgba(177,155,255,.4)"/>
+              <path d="M100 118 Q78 100 70 106" stroke="#b19bff" stroke-width="5" fill="none" stroke-linecap="round"/>
+              <path d="M94 142 Q74 138 66 142" stroke="#b19bff" stroke-width="5" fill="none" stroke-linecap="round"/>
+              <path d="M96 186 Q76 194 68 198" stroke="#b19bff" stroke-width="5" fill="none" stroke-linecap="round"/>
+              <path d="M200 148 L258 138" stroke="#b19bff" stroke-width="12" stroke-linecap="round"/>
+            </g>
+            <g class="neuron">
+              <circle cx="410" cy="160" r="62" fill="rgba(177,155,255,.14)" stroke="#b19bff" stroke-width="3.5"/>
+              <circle cx="410" cy="160" r="17" fill="rgba(177,155,255,.4)"/>
+              <path d="M460 118 Q482 100 490 106" stroke="#b19bff" stroke-width="5" fill="none" stroke-linecap="round"/>
+              <path d="M466 142 Q486 138 494 142" stroke="#b19bff" stroke-width="5" fill="none" stroke-linecap="round"/>
+              <path d="M464 186 Q484 194 492 198" stroke="#b19bff" stroke-width="5" fill="none" stroke-linecap="round"/>
+              <path d="M360 148 L302 138" stroke="#b19bff" stroke-width="12" stroke-linecap="round"/>
+            </g>
+            <rect x="262" y="118" width="36" height="84" rx="12" fill="rgba(255,217,59,.1)" stroke="rgba(255,217,59,.35)" stroke-width="2"/>
+            <circle class="nt" cx="280" cy="138" r="7" fill="#ffd93b" stroke="#c9a400" stroke-width="1.5" style="animation-delay:0s"/>
+            <circle class="nt" cx="280" cy="160" r="7" fill="#ffd93b" stroke="#c9a400" stroke-width="1.5" style="animation-delay:1.1s"/>
+            <circle class="nt" cx="280" cy="182" r="7" fill="#ffd93b" stroke="#c9a400" stroke-width="1.5" style="animation-delay:2.2s"/>
+            <path d="M318 150 L336 142 L333 156 Z" fill="#ff8c6b" stroke="#d9643f" stroke-width="1.5"/>
+            <path d="M318 172 L336 164 L333 178 Z" fill="#ff8c6b" stroke="#d9643f" stroke-width="1.5"/>
+            <text x="150" y="252" class="lbl" text-anchor="middle">Neurônio pré-sináptico</text>
+            <text x="410" y="252" class="lbl" text-anchor="middle">Neurônio pós-sináptico</text>
+            <text x="280" y="106" class="lbl lbl-dim" text-anchor="middle">fenda sináptica</text>
+            <text x="280" y="228" class="lbl lbl-dim" text-anchor="middle">Neurotransmissor</text>
+          </svg>
+          <div class="diagram-legend"><span class="lg-dot" style="--ld:#ffd93b"></span>Neurotransmissor (amarelo) — cruza a fenda em direção ao neurônio seguinte</div>
+          <figcaption>A sinapse — a via expressa entre neurônios</figcaption>
+        </figure>
+
+        <figure class="diagram-card" data-reveal>
+          <svg viewBox="0 0 560 320" role="img" aria-label="Diagrama de hormônio na corrente sanguínea">
+            <g class="gland">
+              <circle cx="120" cy="110" r="38" fill="rgba(255,140,107,.18)" stroke="#ff8c6b" stroke-width="3.5"/>
+              <circle cx="120" cy="110" r="12" fill="rgba(255,140,107,.45)"/>
+              <circle cx="100" cy="76" r="16" fill="rgba(255,140,107,.18)" stroke="#ff8c6b" stroke-width="3.5"/>
+              <circle cx="142" cy="76" r="16" fill="rgba(255,140,107,.18)" stroke="#ff8c6b" stroke-width="3.5"/>
+              <path d="M100 88 L108 100 M142 88 L132 100" stroke="#ff8c6b" stroke-width="4" fill="none"/>
+            </g>
+            <path d="M20 185 L540 185" stroke="#f4c7cc" stroke-width="48" opacity=".35" stroke-linecap="round"/>
+            <path d="M20 185 L540 185" stroke="#f4c7cc" stroke-width="8" opacity=".25" stroke-linecap="round"/>
+            <ellipse class="rbc" cx="90" cy="185" rx="12" ry="6.5" fill="rgba(229,115,115,.6)"/>
+            <ellipse class="rbc" cx="210" cy="185" rx="12" ry="6.5" fill="rgba(229,115,115,.6)"/>
+            <ellipse class="rbc" cx="340" cy="185" rx="12" ry="6.5" fill="rgba(229,115,115,.6)"/>
+            <ellipse class="rbc" cx="470" cy="185" rx="12" ry="6.5" fill="rgba(229,115,115,.6)"/>
+            <circle class="hormone" style="--hd:#f4643f;animation-delay:0s" cx="140" cy="181" r="9"/>
+            <circle class="hormone" style="--hd:#f4643f;animation-delay:2.4s" cx="140" cy="185" r="9"/>
+            <circle class="hormone" style="--hd:#f4643f;animation-delay:4.8s" cx="140" cy="189" r="9"/>
+            <circle cx="500" cy="185" r="38" fill="rgba(139,95,168,.2)" stroke="#8b5fa8" stroke-width="3.5"/>
+            <path d="M490 170 L502 178 L499 166 Z" fill="#f4643f"/>
+            <path d="M510 170 L522 178 L519 166 Z" fill="#f4643f"/>
+            <text x="120" y="58" class="lbl" text-anchor="middle">Glândula endócrina</text>
+            <text x="120" y="240" class="lbl lbl-dim" text-anchor="middle">produz e libera</text>
+            <text x="310" y="158" class="lbl lbl-dim" text-anchor="middle">corrente sanguínea</text>
+            <text x="500" y="142" class="lbl" text-anchor="middle">célula-alvo</text>
+          </svg>
+          <div class="diagram-legend"><span class="lg-dot" style="--ld:#f4643f"></span>Hormônio (laranja) — viaja pelo sangue até a célula-alvo</div>
+          <figcaption>A corrente sanguínea — a via de longo alcance</figcaption>
+        </figure>
+      </div>
+
+      <div class="compare">
+        <div class="compare-legend">
+          <span class="c-pill c-nt"><b>N</b>Neurotransmissor</span>
+          <span class="c-pill c-horm"><b>H</b>Hormônio</span>
+        </div>
+        <div class="c-chart">
+          <div class="c-row">
+            <span class="c-label">Transporte</span>
+            <span class="c-bar c-nt" title="direto, entre neurônios"><b>N</b><i><span class="c-fill c-fill-nt" data-w="95" style="--w:95%"></span></i><span class="c-bar-word">muito rápida</span></span>
+            <span class="c-bar c-horm" title="percorre o corpo todo"><b>H</b><i><span class="c-fill c-fill-horm" data-w="45" style="--w:45%"></span></i><span class="c-bar-word">lenta</span></span>
+          </div>
+          <div class="c-row">
+            <span class="c-label">Velocidade da ação</span>
+            <span class="c-bar c-nt" title="respostas em milissegundos"><b>N</b><i><span class="c-fill c-fill-nt" data-w="95" style="--w:95%"></span></i><span class="c-bar-word">muito rápida</span></span>
+            <span class="c-bar c-horm" title="minutos a horas"><b>H</b><i><span class="c-fill c-fill-horm" data-w="15" style="--w:15%"></span></i><span class="c-bar-word">lenta</span></span>
+          </div>
+          <div class="c-row">
+            <span class="c-label">Duração do efeito</span>
+            <span class="c-bar c-nt" title="curta, desfaz rápido"><b>N</b><i><span class="c-fill c-fill-nt" data-w="15" style="--w:15%"></span></i><span class="c-bar-word">curta</span></span>
+            <span class="c-bar c-horm" title="duradoura, persiste"><b>H</b><i><span class="c-fill c-fill-horm" data-w="95" style="--w:95%"></span></i><span class="c-bar-word">duradoura</span></span>
+          </div>
+          <div class="c-row">
+            <span class="c-label">Alcance</span>
+            <span class="c-bar c-nt" title="local, só na fenda"><b>N</b><i><span class="c-fill c-fill-nt" data-w="15" style="--w:15%"></span></i><span class="c-bar-word">local</span></span>
+            <span class="c-bar c-horm" title="chega ao corpo todo"><b>H</b><i><span class="c-fill c-fill-horm" data-w="95" style="--w:95%"></span></i><span class="c-bar-word">corpo todo</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="mensageiros" class="section">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <p class="kicker"><span class="dot dot-joy"></span>03 &middot; O elenco principal</p>
+        <h2>Conhecendo os mensageiros</h2>
+        <p class="lead">Quatro substâncias roubam a cena quando o assunto é emoção. A pesquisa do grupo foi em cima delas — conheça o papel de cada uma na história do nosso corpo.</p>
+      </div>
+
+      <div class="msg-grid">
+        <article class="msg-card msg-enu" data-reveal>
+          <div class="msg-top">
+            <div class="msg-char">
+              <svg id="ch-enu" class="char char-enu" viewBox="0 0 140 190" aria-hidden="true" data-char="enu"></svg>
+            </div>
+            <div class="msg-head">
+              <h3>Melatonina</h3>
+              <p class="msg-nick">o maestro do sono</p>
+            </div>
+            <span class="msg-type">hormônio</span>
+          </div>
+          <p class="msg-desc">Regula o <strong>ritmo circadiano</strong> — nosso relógio biológico — avisando o corpo que é hora de dormir quando o ambiente escurece.</p>
+          <ul class="msg-facts">
+            <li>Produzida pela glândula pineal, com pico de secreção à noite</li>
+            <li>Atua como antioxidante, protegendo as células</li>
+            <li>Suplementação autorizada pela Anvisa, com orientação médica</li>
+          </ul>
+        </article>
+
+        <article class="msg-card msg-sad" data-reveal>
+          <div class="msg-top">
+            <div class="msg-char">
+              <svg class="char char-sad" viewBox="0 0 140 190" aria-hidden="true">
+                <use href="#ch-sad"/>
+              </svg>
+            </div>
+            <div class="msg-head">
+              <h3>Serotonina</h3>
+              <p class="msg-nick">o regulador de humor</p>
+            </div>
+            <span class="msg-type">neurotransmissor</span>
+          </div>
+          <p class="msg-desc">Regula <strong>humor, sono, apetite e ritmo cardíaco</strong> — e quase 90% dela é produzida no intestino, não no cérebro.</p>
+          <ul class="msg-facts">
+            <li>Precursora direta da produção de melatonina</li>
+            <li>Controla movimentos intestinais, saciedade e coagulação</li>
+            <li>Níveis baixos ligados à depressão, ansiedade e insônia</li>
+          </ul>
+        </article>
+
+        <article class="msg-card msg-joy" data-reveal>
+          <div class="msg-top">
+            <div class="msg-char">
+              <svg class="char char-joy" viewBox="0 0 140 190" aria-hidden="true">
+                <use href="#ch-joy"/>
+              </svg>
+            </div>
+            <div class="msg-head">
+              <h3>Dopamina</h3>
+              <p class="msg-nick">a química da recompensa</p>
+            </div>
+            <span class="msg-type">neurotransmissor</span>
+          </div>
+          <p class="msg-desc">É o centro do <strong>sistema de recompensa e motivação</strong>. Ela não gera o prazer em si — cria a antecipação dele, impulsionando você até a meta.</p>
+          <ul class="msg-facts">
+            <li>Motivação, foco e atenção para iniciar tarefas</li>
+            <li>Controla os movimentos voluntários do corpo</li>
+            <li>Participa do aprendizado, memória e controle hormonal</li>
+          </ul>
+        </article>
+
+        <article class="msg-card msg-dis" data-reveal>
+          <div class="msg-top">
+            <div class="msg-char">
+              <svg class="char char-dis" viewBox="0 0 140 190" aria-hidden="true">
+                <use href="#ch-dis"/>
+              </svg>
+            </div>
+            <div class="msg-head">
+              <h3>Ocitocina</h3>
+              <p class="msg-nick">o hormônio do afeto</p>
+            </div>
+            <span class="msg-type">hormônio</span>
+          </div>
+          <p class="msg-desc">É o <strong>hormônio do vínculo social</strong>, do parto e da amamentação — apelidada de “hormônio do amor” por fortalecer os laços afetivos.</p>
+          <ul class="msg-facts">
+            <li>Provoca as contrações do parto e a ejeção do leite</li>
+            <li>Aumenta empatia, confiança e segurança nas relações</li>
+            <li>Reduz o cortisol e diminui a ansiedade</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="extra-strip" data-reveal>
+        <p class="extra-title">E os coadjuvantes do elenco?</p>
+        <div class="extra-grid">
+          <div class="extra-card c-anx">
+            <span class="extra-dot"></span>
+            <h4>Cortisol</h4>
+            <p>O hormônio do estresse: mantém o alerta e libera energia — mas em excesso desregula tudo.</p>
+          </div>
+          <div class="extra-card c-fear">
+            <span class="extra-dot"></span>
+            <h4>Adrenalina</h4>
+            <p>O alarme de emergência: prepara o corpo para lutar ou fugir. Também atua como neurotransmissor.</p>
+          </div>
+          <div class="extra-card c-ang">
+            <span class="extra-dot"></span>
+            <h4>Endorfina</h4>
+            <p>O analgésico natural: reduz a dor e traz bem-estar — liberada em boas sessões de exercício.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="equilibrio" class="section">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <p class="kicker"><span class="dot dot-anx"></span>04 &middot; Estresse e equilíbrio</p>
+        <h2>Quando a equipe se desorganiza</h2>
+        <p class="lead">O vilão da história é o <strong>estresse prolongado</strong>: o excesso de cortisol desmonta a fábrica de emoções — e a ciência mostra exatamente onde o estrago acontece.</p>
+      </div>
+
+      <div class="stress-grid">
+        <article class="stress-card" data-reveal>
+          <span class="stress-ico" style="--sc:#f4643f">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 12h20M12 2v20"/><circle cx="12" cy="12" r="10" opacity=".4"/></svg>
+          </span>
+          <h3>Memória em queda</h3>
+          <p>O excesso de cortisol reduz o hipocampo e enfraquece o córtex pré-frontal: aprendizado, foco e decisões saem prejudicados.</p>
+        </article>
+        <article class="stress-card" data-reveal>
+          <span class="stress-ico" style="--sc:#f49b4f">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3v2M12 19v2M3 12h2M19 12h2"/><path d="M12 8a4 4 0 0 1 4 4c0 3-2 4-4 5-2-1-4-2-4-5a4 4 0 0 1 4-4z"/></svg>
+          </span>
+          <h3>Alerta constante</h3>
+          <p>A amígdala — a área do medo e da sobrevivência — fica hiperativa: ansiedade, tensão e pânico viram o padrão do dia.</p>
+        </article>
+        <article class="stress-card" data-reveal>
+          <span class="stress-ico" style="--sc:#4e8fe8">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 8c-1.5-2.5-5-3-5-6.5M12 8c1.5-2.5 5-3 5-6.5M12 8v13"/><path d="M7 14c-2 .5-3 2-3 4.5C4 21 7 22 9 21.5M17 14c2 .5 3 2 3 4.5 0 2.5-3 3.5-5 3"/></svg>
+          </span>
+          <h3>Humor no chão</h3>
+          <p>O cortisol alto bloqueia a produção de serotonina e dopamina: apatia, perda de prazer nas atividades (anedonia) e depressão.</p>
+        </article>
+        <article class="stress-card" data-reveal>
+          <span class="stress-ico" style="--sc:#8a6ae6">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 11c-1-4-4-7-8-7s-7 3-8 7c2 1 3 3 3 5 0-1 2-2 3-3 1 3 4 6 8 6 3 0 5-2 5-5 0-2-1-3-3-3z"/></svg>
+          </span>
+          <h3>Esgotamento total</h3>
+          <p>A inflamação no sistema nervoso danifica as conexões entre neurônios e culmina no burnout: esgotamento físico e mental extremo.</p>
+        </article>
+      </div>
+
+      <div class="balance">
+        <div class="balance-chat" data-reveal>
+          <div class="chat-bubble">
+            <p>“Eu só queria ajudar… mas, em excesso, o meu cortisol vira um problema para a equipe inteira.”</p>
+            <span class="chat-name c-anx">— Ansiedade</span>
+          </div>
+          <div class="balance-char">
+            <svg class="char char-anx" viewBox="0 0 140 190" aria-hidden="true"><use href="#ch-anx"/></svg>
+          </div>
+        </div>
+
+        <div class="balance-tips" data-reveal-group>
+          <h3>A boa notícia: o equilíbrio se constrói</h3>
+          <ul class="tips">
+            <li>
+              <span class="tip-check">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 7"/></svg>
+              </span>
+              <p><strong>Dormir bem</strong> — a melatonina é produzida no escuro, respeitando o ritmo circadiano.</p>
+            </li>
+            <li>
+              <span class="tip-check">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 7"/></svg>
+              </span>
+              <p><strong>Ver o sol</strong> — a luz do dia ajuda a produzir serotonina.</p>
+            </li>
+            <li>
+              <span class="tip-check">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 7"/></svg>
+              </span>
+              <p><strong>Mexer o corpo</strong> — exercícios liberam dopamina e endorfina.</p>
+            </li>
+            <li>
+              <span class="tip-check">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 7"/></svg>
+              </span>
+              <p><strong>Abraçar e conviver</strong> — boas relações sociais aumentam a ocitocina.</p>
+            </li>
+            <li>
+              <span class="tip-check">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 7"/></svg>
+              </span>
+              <p><strong>Comer bem</strong> — os nutrientes são a matéria-prima dos mensageiros químicos.</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="quiz" class="section section-quiz">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <p class="kicker"><span class="dot dot-ang"></span>05 &middot; Modo quiz</p>
+        <h2>Hora de testar a sala!</h2>
+      </div>
+
+      <div class="quiz-wrap" data-reveal>
+        <div class="quiz-intro" id="quizIntro">
+          <button class="btn btn-primary btn-lg" id="startQuizBtn" type="button">Iniciar o quiz</button>
+        </div>
+
+        <div class="quiz-app" id="quizApp" hidden>
+          <div class="quiz-topbar">
+            <div class="quiz-dots" id="quizDots"></div>
+            <div class="quiz-meta">
+              <span class="quiz-counter" id="quizCounter">1 / 12</span>
+            </div>
+            <div class="quiz-tools">
+              <button class="quiz-tool" id="muteBtn" type="button" title="Som ligado/desligado" aria-label="Som">
+                <svg id="soundOn" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16 9a4 4 0 0 1 0 6M18.5 6.5a8 8 0 0 1 0 11"/></svg>
+                <svg id="soundOff" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M17 9l5 5M22 9l-5 5"/></svg>
+              </button>
+              <button class="quiz-tool" id="quitQuizBtn" type="button" title="Sair do quiz" aria-label="Sair do quiz">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="quiz-card" id="quizCard">
+            <div class="quiz-cols">
+              <div class="quiz-col-main">
+                <div class="quiz-qhead">
+                  <span class="quiz-emo" id="quizEmo">Pergunta da Alegria</span>
+                  <span class="quiz-typing" id="quizTyping" hidden>
+                    <span class="typing-chip">escrevendo</span>
+                  </span>
+                  <span class="quiz-paused" id="quizPaused" hidden>escrita pausada</span>
+                </div>
+
+                <div class="quiz-question" id="quizQuestion">
+                  <span class="q-text"></span><span class="caret"></span>
+                </div>
+
+                <div class="quiz-controls" id="quizControls" hidden>
+                  <button class="btn btn-ghost btn-sm" id="pauseBtn" type="button">
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M7 5h4v14H7zM13 5h4v14h-4z"/></svg>
+                    <span id="pauseBtnLabel">Pausar</span>
+                  </button>
+                  <button class="btn btn-ghost btn-sm" id="revealBtn" type="button">Revelar pergunta completa</button>
+                </div>
+
+                <div class="quiz-options" id="quizOptions"></div>
+
+                <button class="btn btn-primary btn-lg quiz-next" id="nextBtn" hidden type="button">Próxima pergunta</button>
+              </div>
+
+              <div class="quiz-col-side">
+                <div class="quiz-stage" id="quizStage" aria-hidden="true">
+                  <svg class="char stage-char" viewBox="0 0 140 190"></svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="quiz-end" id="quizEnd" hidden>
+          <div class="end-stage" id="endStage">
+            <div class="end-orbs" id="endOrbs" aria-hidden="true"></div>
+            <div class="end-ring" id="endRing"><span id="endScore">0/12</span></div>
+            <div class="end-face" id="endFace"></div>
+            <h3 id="endTitle">Resultado</h3>
+            <p class="end-msg" id="endMsg"></p>
+            <div class="end-actions">
+              <button class="btn btn-primary btn-lg" id="restartBtn" type="button">Refazer o quiz</button>
+              <a href="#inicio" class="btn btn-ghost">Voltar ao início</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer" id="creditos">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <p class="footer-brand">Turma 301</p>
+        <p class="footer-desc">Pedro &middot; Igor &middot; Danilo &middot; Mariana &middot; Sheley &middot; Laysla</p>
+      </div>
+    </div>
+    <p class="footer-note">Trabalho de Biologia — Sistema Nervoso e Sistema Endócrino.</p>
+  </div>
+</footer>
+
+<script src="js/vendor/gsap.min.js"></script>
+<script src="js/vendor/ScrollTrigger.min.js"></script>
+<script src="js/chars.js"></script>
+<script>window.CharBuilder.mount();</script>
+<script src="js/quiz.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
